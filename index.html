@@ -50,7 +50,7 @@ h1,h2,h3{font-family:"Space Grotesk",Inter,sans-serif;letter-spacing:-.02em}
 .bg-grid{position:fixed;inset:0;z-index:-2;pointer-events:none;
   background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);
   background-size:56px 56px;mask-image:radial-gradient(ellipse at 50% 0%,#000 0%,transparent 70%);-webkit-mask-image:radial-gradient(ellipse at 50% 0%,#000 0%,transparent 70%);opacity:.5}
-.blob{position:fixed;z-index:-1;border-radius:50%;filter:blur(90px);opacity:.28;pointer-events:none;animation:drift 22s ease-in-out infinite alternate}
+.blob{position:fixed;z-index:-1;border-radius:50%;filter:blur(110px);opacity:.15;pointer-events:none}
 .blob.b1{width:520px;height:520px;background:#22d3ee;top:-160px;left:-120px}
 .blob.b2{width:480px;height:480px;background:#8b5cf6;top:30vh;right:-180px;animation-delay:-8s}
 .blob.b3{width:380px;height:380px;background:#ec4899;bottom:-160px;left:30vw;opacity:.14;animation-delay:-14s}
@@ -94,7 +94,7 @@ header.nav.hide{transform:translateY(-120%)}
 .hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;width:100%}
 @media (max-width:960px){.hero .wrap{grid-template-columns:1fr}}
 .status{display:inline-flex;align-items:center;gap:10px;padding:7px 14px 7px 10px;border-radius:999px;font-size:13.5px;font-weight:500;background:var(--surface);border:1px solid var(--border);backdrop-filter:blur(8px)}
-.status .dot{width:9px;height:9px;border-radius:50%;background:var(--green);box-shadow:0 0 0 0 rgba(74,222,128,.7);animation:ping 1.8s infinite}
+.status .dot{width:9px;height:9px;border-radius:50%;background:var(--green)}
 @keyframes ping{70%{box-shadow:0 0 0 9px rgba(74,222,128,0)}100%{box-shadow:0 0 0 0 rgba(74,222,128,0)}}
 .hero h1{font-size:clamp(46px,8vw,92px);line-height:.98;margin:22px 0 16px;font-weight:700}
 .hero h1 .grad-text{background-size:200% 100%;animation:shine 6s linear infinite}
@@ -111,25 +111,6 @@ header.nav.hide{transform:translateY(-120%)}
 .socials a:hover{color:var(--text);transform:translateY(-3px);border-color:var(--cyan);box-shadow:var(--glow)}
 .socials svg{width:19px;height:19px}
 
-/* terminal */
-.terminal{border-radius:16px;overflow:hidden;background:var(--term-bg);border:1px solid rgba(148,163,184,.2);box-shadow:0 30px 80px -20px rgba(0,0,0,.7),0 0 0 1px rgba(34,211,238,.08);transform:perspective(1200px) rotateY(-8deg) rotateX(4deg);transition:transform .6s;color:#cbd5e1}
-.terminal:hover{transform:perspective(1200px) rotateY(0) rotateX(0)}
-@media (max-width:960px){.terminal{transform:none}}
-.term-bar{display:flex;align-items:center;gap:7px;padding:12px 14px;background:rgba(255,255,255,.04);border-bottom:1px solid rgba(148,163,184,.12)}
-.term-bar i{width:11px;height:11px;border-radius:50%;display:block}
-.term-bar span{margin-left:10px;font:12px "JetBrains Mono",ui-monospace,Menlo,monospace;color:#7c8aa5}
-.term-body{padding:18px 18px 22px;font:13px/1.75 "JetBrains Mono",ui-monospace,Menlo,monospace,monospace;height:330px;overflow:hidden}
-.term-body .l{white-space:pre-wrap;word-break:break-word}
-.t-prompt{color:#22d3ee}.t-ok{color:#4ade80}.t-bad{color:#f87171}.t-warn{color:#fbbf24}.t-dim{color:#64748b}.t-vio{color:#c4b5fd}
-
-/* stats */
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:-30px;position:relative;z-index:2}
-@media (max-width:820px){.stats{grid-template-columns:repeat(2,1fr)}}
-.stat{padding:22px;border-radius:18px;background:var(--surface);border:1px solid var(--border);backdrop-filter:blur(10px);position:relative;overflow:hidden}
-.stat::before{content:"";position:absolute;inset:0 0 auto 0;height:2px;background:var(--grad);opacity:.8}
-.stat b{display:block;font:700 clamp(30px,4vw,40px)/1.1 "Space Grotesk",Inter,system-ui,sans-serif}
-.stat span{font-size:13.5px;color:var(--muted)}
-
 /* marquee */
 .marquee{padding:46px 0 10px;overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
 .mq-row{display:flex;gap:12px;width:max-content;animation:mq 40s linear infinite}
@@ -138,6 +119,27 @@ header.nav.hide{transform:translateY(-120%)}
 @keyframes mq{to{transform:translateX(-50%)}}
 .mq-item{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:12px;background:var(--surface);border:1px solid var(--border);font-size:14px;font-weight:500;color:var(--muted);white-space:nowrap}
 .mq-item i{width:7px;height:7px;border-radius:50%;background:var(--c,var(--cyan))}
+
+/* profile card */
+.pcard{padding:28px;max-width:430px;justify-self:end;width:100%}
+@media (max-width:960px){.pcard{justify-self:start}}
+.pc-top{display:flex;align-items:center;gap:16px}
+.mono-av{width:70px;height:70px;border-radius:20px;padding:2px;background:var(--grad);flex:none}
+.mono-av span{display:grid;place-items:center;width:100%;height:100%;border-radius:18px;background:var(--surface-solid);font:700 24px "Space Grotesk",Inter,system-ui,sans-serif;letter-spacing:.02em}
+.mono-av b{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.pc-name{font:700 21px "Space Grotesk",Inter,system-ui,sans-serif}
+.pc-role{color:var(--muted);font-size:14px}
+.pc-facts{list-style:none;margin:22px 0;padding:18px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);display:grid;gap:11px}
+.pc-facts li{display:flex;align-items:center;gap:11px;font-size:14.5px;color:var(--muted)}
+.pc-facts svg{width:17px;height:17px;color:var(--cyan);flex:none}
+.pc-facts .dot{width:9px;height:9px;margin:0 4px;border-radius:50%;background:var(--green);box-shadow:0 0 0 0 rgba(74,222,128,.7);animation:ping 2.4s infinite;flex:none}
+.pc-label{font:500 12px "JetBrains Mono",ui-monospace,monospace;color:var(--subtle);margin-bottom:10px}
+.pc-focus{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.pc-focus span{font-size:13px;font-weight:600;padding:5px 12px;border-radius:9px;color:var(--c);background:color-mix(in srgb,var(--c) 13%,transparent);border:1px solid color-mix(in srgb,var(--c) 30%,transparent)}
+.pc-links{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.pc-links a{display:flex;align-items:center;justify-content:center;gap:7px;padding:10px 6px;border-radius:11px;font-size:13.5px;font-weight:600;color:var(--text);background:var(--surface-2);border:1px solid var(--border);transition:border-color .2s,transform .2s}
+.pc-links a:hover{border-color:var(--cyan);transform:translateY(-2px)}
+.pc-links svg{width:15px;height:15px}
 
 /* sections */
 section.block{padding:100px 0 40px}
@@ -369,7 +371,7 @@ footer{padding:50px 0 40px;color:var(--subtle);font-size:13.5px;text-align:cente
 </head>
 <body>
 <script>(function(){try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}})();</script>
-<div class="bg-grid"></div><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div id="cursor-glow"></div>
+<div class="bg-grid"></div><div class="blob b1"></div><div class="blob b2"></div>
 <div id="progress"></div>
 
 <!-- shared gradient for ring -->
@@ -379,11 +381,11 @@ footer{padding:50px 0 40px;color:var(--subtle);font-size:13.5px;text-align:cente
   <div class="nav-inner"><div class="nav-bar">
     <a class="brand" href="#top"><span class="logo">ZT</span>Zainab Taha</a>
     <ul>
-      <li><a href="#focus">Focus</a></li>
+      <li><a href="#experience">Experience</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#research">Research</a></li>
       <li><a href="#skills">Skills</a></li>
-      <li><a href="#experience">Experience</a></li>
+      <li><a href="#certs">Certifications</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="nav-actions">
@@ -398,7 +400,6 @@ footer{padding:50px 0 40px;color:var(--subtle);font-size:13.5px;text-align:cente
 <main id="top">
 <!-- HERO -->
 <section class="hero">
-  <canvas id="net" aria-hidden="true"></canvas>
   <div class="wrap">
     <div>
       <span class="status reveal"><span class="dot"></span>Open to cybersecurity internships · Jan 2027</span>
@@ -408,40 +409,86 @@ footer{padding:50px 0 40px;color:var(--subtle);font-size:13.5px;text-align:cente
       <div class="cta reveal" style="--d:.32s">
         <a class="btn primary" href="#projects">Explore my work
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn" href="#contact">Get in touch</a>
-      </div>
-      <div class="socials reveal" style="--d:.4s">
-        <a href="https://github.com/zainabthaa" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.1 0 4.7-2.8 5.7-5.5 6 .4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5z"/></svg></a>
-        <a href="https://www.linkedin.com/in/zainab-taha-cs" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.4 20.5h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.3V9h3.4v1.6h.1c.5-.9 1.6-1.8 3.4-1.8 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2zM7.1 20.5H3.5V9h3.6v11.5zM22.2 0H1.8C.8 0 0 .8 0 1.7v20.6c0 .9.8 1.7 1.8 1.7h20.4c1 0 1.8-.8 1.8-1.7V1.7C24 .8 23.2 0 22.2 0z"/></svg></a>
-        <a href="mailto:zaataha25@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg></a>
+        <a class="btn" href="#experience">Experience &amp; education</a>
       </div>
     </div>
-    <div class="terminal reveal" style="--d:.3s" aria-label="Animated terminal showing project commands">
-      <div class="term-bar"><i style="background:#f87171"></i><i style="background:#fbbf24"></i><i style="background:#4ade80"></i><span>zainab@soc-lab: ~</span></div>
-      <div class="term-body" id="term"></div>
-    </div>
+    <aside class="gcard tilt pcard reveal" style="--d:.2s" aria-label="Profile summary">
+      <div class="pc-top">
+        <div class="mono-av"><span><b>ZT</b></span></div>
+        <div>
+          <div class="pc-name">Zainab Taha</div>
+          <div class="pc-role">Cybersecurity Student · Effat University</div>
+        </div>
+      </div>
+      <ul class="pc-facts">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>Jeddah, Saudi Arabia</li>
+        <li><span class="dot"></span>Available for internships · Jan 2027</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg>B.Sc. CS, Cybersecurity · GPA 3.86</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>Published co-author · ICEE 2026</li>
+      </ul>
+      <div class="pc-label">// focus areas</div>
+      <div class="pc-focus">
+        <span class="c-grc">GRC</span><span class="c-cloud">Network &amp; Cloud</span><span class="c-soc">Security Operations</span>
+      </div>
+      <div class="pc-links">
+        <a href="https://www.linkedin.com/in/zainab-taha-cs" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.4 20.5h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.3V9h3.4v1.6h.1c.5-.9 1.6-1.8 3.4-1.8 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2zM7.1 20.5H3.5V9h3.6v11.5zM22.2 0H1.8C.8 0 0 .8 0 1.7v20.6c0 .9.8 1.7 1.8 1.7h20.4c1 0 1.8-.8 1.8-1.7V1.7C24 .8 23.2 0 22.2 0z"/></svg>LinkedIn</a>
+        <a href="https://github.com/zainabthaa" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.1 0 4.7-2.8 5.7-5.5 6 .4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5z"/></svg>GitHub</a>
+        <a href="mailto:zaataha25@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>Email</a>
+      </div>
+    </aside>
   </div>
 </section>
-
-<div class="wrap">
-  <div class="stats">
-    <div class="stat reveal"><b><span class="count" data-to="3.86" data-dec="2">0</span></b><span>GPA / 4.00 · President's List</span></div>
-    <div class="stat reveal" style="--d:.08s"><b><span class="count" data-to="20">0</span></b><span>MITRE ATT&amp;CK techniques emulated &amp; detected</span></div>
-    <div class="stat reveal" style="--d:.16s"><b><span class="count" data-to="10">0</span></b><span>AWS controls enforced as code in CI/CD</span></div>
-    <div class="stat reveal" style="--d:.24s"><b><span class="count" data-to="1">0</span></b><span>peer-reviewed journal publication (2026)</span></div>
-  </div>
-</div>
 
 <div class="marquee" aria-hidden="true">
   <div class="mq-row" id="mq1"></div>
   <div class="mq-row rev" id="mq2"></div>
 </div>
 
+<!-- EXPERIENCE & EDUCATION -->
+<section class="block" id="experience">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">01 / experience</span>
+      <h2>Experience &amp; <span class="grad-text">education</span></h2>
+    </div>
+    <div class="two">
+      <div>
+        <h3 class="col-title reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>Experience</h3>
+        <div class="tl" id="tl">
+          <div class="line"><i id="tlfill"></i></div>
+          <div class="gcard tl-item c-grc reveal"><div class="d">Aug – Oct 2026</div><h4>Undergraduate Researcher</h4><div class="org">Department of Computer Science, Effat University</div><p>Co-authored a peer-reviewed journal paper (ICEE, 2026) presenting an open, Docker-based IT/OT testbed with rule-based and Random Forest intrusion detection for energy-sector networks.</p></div>
+          <div class="gcard tl-item c-cloud reveal"><div class="d">2025 – 2026</div><h4>Vice President &amp; Co-founder, Cyber Security Club</h4><div class="org">Effat University</div><p>Co-led planning and delivery of hands-on labs, competitions and security workshops.</p></div>
+          <div class="gcard tl-item c-app reveal"><div class="d">2026 – present</div><h4>Vice President, Society of Petroleum Engineers</h4><div class="org">SPE Chapter, Effat University</div><p>Co-directing strategic planning and operations for technical workshops and community initiatives.</p></div>
+          <div class="gcard tl-item c-grc reveal"><div class="d">2025 – 2026</div><h4>Nominee, Student Shura Council President</h4><div class="org">Effat University</div><p>Nominated for the Queen Effat Citizenship Award to serve as student-body representative.</p></div>
+        </div>
+      </div>
+      <div>
+        <h3 class="col-title reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg>Education</h3>
+        <div class="gcard edu reveal">
+          <span class="tag c-cloud">B.Sc. Computer Science · Cybersecurity Track</span>
+          <h3 style="font-size:26px;margin:14px 0 2px">Effat University</h3>
+          <div style="color:var(--muted)">Jeddah, Saudi Arabia · Expected June 2027</div>
+          <div class="gpa">
+            <div class="ring"><svg viewBox="0 0 110 110"><circle class="bgc" cx="55" cy="55" r="46"/><circle class="fg" id="ringfg" cx="55" cy="55" r="46"/></svg><b>3.86</b></div>
+            <div>
+              <div style="font:500 12px 'JetBrains Mono',ui-monospace,monospace;color:var(--subtle);margin-bottom:6px">GPA / 4.00</div>
+              <div class="honor"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.3 7 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 7-1z"/></svg>President's List 2025/26</div>
+              <div class="honor"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.3 7 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 7-1z"/></svg>Dean's List 2024/25</div>
+            </div>
+          </div>
+          <h4>// relevant coursework</h4>
+          <div class="chips"><span class="chip">Governance, Risk &amp; Compliance</span><span class="chip">Computer Networks</span><span class="chip">Ethical Hacking</span><span class="chip">Cryptography &amp; Network Security</span><span class="chip">Digital Forensics</span><span class="chip">Information &amp; Cyber Security</span><span class="chip">Software Engineering</span><span class="chip">Artificial Intelligence</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- FOCUS -->
 <section class="block" id="focus">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="kicker">01 / focus</span>
+      <span class="kicker">02 / focus</span>
       <h2>Where policy meets <span class="grad-text">infrastructure</span></h2>
       <p>Three areas I keep coming back to, linked by one question: does the control actually work?</p>
     </div>
@@ -475,7 +522,7 @@ footer{padding:50px 0 40px;color:var(--subtle);font-size:13.5px;text-align:cente
 <section class="block" id="projects">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="kicker">02 / projects</span>
+      <span class="kicker">03 / projects</span>
       <h2>Things I've <span class="grad-text">built &amp; broken</span></h2>
       <p>Pick a project or let it play. Open a case study for the full details, and click any screenshot to zoom in.</p>
     </div>
@@ -732,7 +779,7 @@ footer{padding:50px 0 40px;color:var(--subtle);font-size:13.5px;text-align:cente
 <section class="block" id="research">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="kicker">03 / research</span>
+      <span class="kicker">04 / research</span>
       <h2>Published <span class="grad-text">research</span></h2>
       <p>Peer-reviewed work on AI-based intrusion detection for critical energy infrastructure.</p>
     </div>
@@ -774,7 +821,7 @@ footer{padding:50px 0 40px;color:var(--subtle);font-size:13.5px;text-align:cente
 <section class="block" id="skills">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="kicker">04 / toolkit</span>
+      <span class="kicker">05 / toolkit</span>
       <h2>Skills I <span class="grad-text">use, not just list</span></h2>
       <p>Every skill here shows up in at least one project above.</p>
     </div>
@@ -783,7 +830,18 @@ footer{padding:50px 0 40px;color:var(--subtle);font-size:13.5px;text-align:cente
       <div class="gcard spanel" id="spanel" role="tabpanel"></div>
     </div>
 
-    <div class="certs">
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section class="block" id="certs">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">06 / certifications</span>
+      <h2>Certifications &amp; <span class="grad-text">training</span></h2>
+      <p>Industry training that backs up the hands-on work.</p>
+    </div>
+    <div class="certs" style="margin-top:0">
       <div class="gcard cert c-soc reveal"><div class="seal"></div><div class="issuer"><span class="clogo"><img src="assets/icons/comptia.svg" alt=""></span>CompTIA</div><h4>Security+</h4><div class="prog">In progress <span class="pbar"><i></i></span></div><div class="yr">Expected Jan 2027</div></div>
       <div class="gcard cert c-cloud reveal" style="--d:.08s"><div class="seal"></div><div class="issuer"><span class="clogo"><img src="assets/icons/cisco.svg" alt=""></span>Cisco</div><h4>Security Operations Center (SOC) Fundamentals</h4><div class="yr">2026</div></div>
       <div class="gcard cert c-grc reveal" style="--d:.16s"><div class="seal"></div><div class="issuer"><span class="clogo ibm">IBM</span>IBM</div><h4>Containers w/ Docker, Kubernetes &amp; OpenShift</h4><div class="yr">2026</div></div>
@@ -792,53 +850,11 @@ footer{padding:50px 0 40px;color:var(--subtle);font-size:13.5px;text-align:cente
   </div>
 </section>
 
-<!-- EXPERIENCE & EDUCATION -->
-<section class="block" id="experience">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="kicker">05 / experience</span>
-      <h2>Experience &amp; <span class="grad-text">education</span></h2>
-    </div>
-    <div class="two">
-      <div>
-        <h3 class="col-title reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>Experience</h3>
-        <div class="tl" id="tl">
-          <div class="line"><i id="tlfill"></i></div>
-          <div class="gcard tl-item c-grc reveal"><div class="d">Aug – Oct 2026</div><h4>Undergraduate Researcher</h4><div class="org">Department of Computer Science, Effat University</div><p>Co-authored a peer-reviewed journal paper (ICEE, 2026) presenting an open, Docker-based IT/OT testbed with rule-based and Random Forest intrusion detection for energy-sector networks.</p></div>
-          <div class="gcard tl-item c-soc reveal"><div class="d">Jan 2026 – present</div><h4>Senior Capstone: Purple-Team Detection Platform</h4><div class="org">Effat University</div><p>Designing and building a 13-container red/blue lab with a custom IDS, SOC dashboard and GRC evidence engine.</p></div>
-          <div class="gcard tl-item c-cloud reveal"><div class="d">2025 – 2026</div><h4>Vice President &amp; Co-founder, Cyber Security Club</h4><div class="org">Effat University</div><p>Co-led planning and delivery of hands-on labs, competitions and security workshops.</p></div>
-          <div class="gcard tl-item c-app reveal"><div class="d">2026 – present</div><h4>Vice President, Society of Petroleum Engineers</h4><div class="org">SPE Chapter, Effat University</div><p>Co-directing strategic planning and operations for technical workshops and community initiatives.</p></div>
-          <div class="gcard tl-item c-grc reveal"><div class="d">2025 – 2026</div><h4>Nominee, Student Shura Council President</h4><div class="org">Effat University</div><p>Nominated for the Queen Effat Citizenship Award to serve as student-body representative.</p></div>
-          <div class="gcard tl-item c-cloud reveal next"><div class="d">Jan 2027</div><h4>Next: cybersecurity internship</h4><p>Open to GRC, cloud security and SOC roles. CompTIA Security+ expected Jan 2027.</p></div>
-        </div>
-      </div>
-      <div>
-        <h3 class="col-title reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg>Education</h3>
-        <div class="gcard edu reveal">
-          <span class="tag c-cloud">B.Sc. Computer Science · Cybersecurity Track</span>
-          <h3 style="font-size:26px;margin:14px 0 2px">Effat University</h3>
-          <div style="color:var(--muted)">Jeddah, Saudi Arabia · Expected June 2027</div>
-          <div class="gpa">
-            <div class="ring"><svg viewBox="0 0 110 110"><circle class="bgc" cx="55" cy="55" r="46"/><circle class="fg" id="ringfg" cx="55" cy="55" r="46"/></svg><b>3.86</b></div>
-            <div>
-              <div style="font:500 12px 'JetBrains Mono',ui-monospace,monospace;color:var(--subtle);margin-bottom:6px">GPA / 4.00</div>
-              <div class="honor"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.3 7 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 7-1z"/></svg>President's List 2025/26</div>
-              <div class="honor"><svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3 6.3 7 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 7-1z"/></svg>Dean's List 2024/25</div>
-            </div>
-          </div>
-          <h4>// relevant coursework</h4>
-          <div class="chips"><span class="chip">Governance, Risk &amp; Compliance</span><span class="chip">Computer Networks</span><span class="chip">Ethical Hacking</span><span class="chip">Cryptography &amp; Network Security</span><span class="chip">Digital Forensics</span><span class="chip">Information &amp; Cyber Security</span><span class="chip">Software Engineering</span><span class="chip">Artificial Intelligence</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- CONTACT -->
 <section class="block" id="contact">
   <div class="wrap">
     <div class="contact reveal">
-      <span class="kicker">06 / contact</span>
+      <span class="kicker">07 / contact</span>
       <h2>Let's build something <span class="grad-text">secure</span></h2>
       <p>I'm looking for a cybersecurity internship from January 2027 in GRC, cloud security or a SOC. I'm based in Jeddah, Saudi Arabia.</p>
       <div class="cta">
@@ -886,10 +902,6 @@ function onScroll(){
 addEventListener('scroll',onScroll,{passive:true});
 top.addEventListener('click',function(){scrollTo({top:0,behavior:reduce?'auto':'smooth'})});
 
-/* cursor glow */
-var cg=$('#cursor-glow');
-if(matchMedia('(pointer:fine)').matches&&!reduce){addEventListener('pointermove',function(e){cg.style.opacity=1;cg.style.transform='translate('+e.clientX+'px,'+e.clientY+'px)'},{passive:true})}
-
 /* reveal + counters */
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
 $$('.reveal').forEach(function(el){io.observe(el)});
@@ -910,67 +922,6 @@ function type(){var w=roles[ri];
   if(!del&&ci===w.length){d=1800;del=true}else if(del&&ci===0){del=false;ri=(ri+1)%roles.length;d=300}
   setTimeout(type,d)}
 type();
-
-/* terminal */
-var script=[
- ['$ ','t-prompt','docker compose up -d   # 13 hosts, 3 subnets'],
- ['','t-ok','✔ router  ✔ ids  ✔ web  ✔ db  ✔ grc-db  … 13/13 running'],
- ['$ ','t-prompt','python3 attacker.py --chain lateral'],
- ['','t-warn','[T1021] remote service → hr-pc'],
- ['','t-warn','[T1078] valid account reuse → finance-pc'],
- ['','t-bad','[IDS] ALERT  lateral movement 172.21.0.100 → 172.20.0.33'],
- ['','t-vio','[GRC] evidence → NIST CSF DE.CM · ISO 27001 · NCA ECC'],
- ['$ ','t-prompt','conftest test tfplan.json -p policy/cis-aws'],
- ['','t-bad','FAIL  5.2  SSH open to 0.0.0.0/0  (aws_security_group.insecure)'],
- ['','t-bad','FAIL  SECRET-1  hard-coded DB password'],
- ['','t-ok','PASS  2.1.1  S3 encryption  (aws_s3_bucket.secure)'],
- ['','t-dim','→ pull request blocked by branch protection'],
- ['$ ','t-prompt','whoami'],
- ['','t-ok','zainab: GRC · cloud security · security operations']
-];
-var term=$('#term'),li=0;
-function nextLine(){
-  if(li>=script.length){setTimeout(function(){term.innerHTML='';li=0;nextLine()},3500);return}
-  var s=script[li++],div=document.createElement('div');div.className='l';term.appendChild(div);
-  while(term.scrollHeight>term.clientHeight&&term.firstChild!==div)term.removeChild(term.firstChild);
-  if(s[0]){var p=document.createElement('span');p.className='t-prompt';p.textContent=s[0];div.appendChild(p)}
-  var body=document.createElement('span');body.className=s[0]?'':s[1];div.appendChild(body);
-  var txt=s[2],k=0;
-  if(reduce||!s[0]){body.textContent=txt;setTimeout(nextLine,s[0]?400:reduce?50:380);return}
-  (function tick(){body.textContent=txt.slice(0,++k);if(k<txt.length)setTimeout(tick,28);else setTimeout(nextLine,450)})();
-}
-nextLine();
-
-/* hero network canvas */
-(function(){
-  var c=$('#net'),x=c.getContext('2d'),W,H,dpr,nodes=[],mouse={x:-999,y:-999},pk=[];
-  function size(){dpr=Math.min(devicePixelRatio||1,2);W=c.offsetWidth;H=c.offsetHeight;c.width=W*dpr;c.height=H*dpr;x.setTransform(dpr,0,0,dpr,0,0);
-    var n=Math.min(90,Math.floor(W*H/15000));nodes=[];for(var i=0;i<n;i++)nodes.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35,r:Math.random()*1.6+1,a:Math.random()<.08})}
-  size();addEventListener('resize',size);
-  c.parentElement.addEventListener('pointermove',function(e){var b=c.getBoundingClientRect();mouse.x=e.clientX-b.left;mouse.y=e.clientY-b.top});
-  c.parentElement.addEventListener('pointerleave',function(){mouse.x=mouse.y=-999});
-  var light=function(){return document.documentElement.getAttribute('data-theme')==='light'};
-  var running=true;new IntersectionObserver(function(e){running=e[0].isIntersecting;if(running)requestAnimationFrame(draw)}).observe(c);
-  function draw(){
-    if(!running)return;
-    x.clearRect(0,0,W,H);var L=light(),D=140;
-    var lc=L?'8,145,178':'34,211,238';
-    for(var i=0;i<nodes.length;i++){var a=nodes[i];
-      if(!reduce){a.x+=a.vx;a.y+=a.vy;if(a.x<0||a.x>W)a.vx*=-1;if(a.y<0||a.y>H)a.vy*=-1;
-        var mx=mouse.x-a.x,my=mouse.y-a.y,md=Math.hypot(mx,my);if(md<160){a.x-=mx/md*.6;a.y-=my/md*.6}}
-      for(var j=i+1;j<nodes.length;j++){var b=nodes[j],d=Math.hypot(a.x-b.x,a.y-b.y);
-        if(d<D){x.strokeStyle='rgba('+lc+','+(1-d/D)*(L?.25:.22)+')';x.lineWidth=1;x.beginPath();x.moveTo(a.x,a.y);x.lineTo(b.x,b.y);x.stroke();
-          if(!reduce&&Math.random()<.0009&&pk.length<14)pk.push({a:a,b:b,t:0,c:Math.random()<.25?'248,113,113':'167,139,250'})}}
-      var md2=Math.hypot(mouse.x-a.x,mouse.y-a.y);
-      if(md2<180){x.strokeStyle='rgba(167,139,250,'+(1-md2/180)*.5+')';x.beginPath();x.moveTo(a.x,a.y);x.lineTo(mouse.x,mouse.y);x.stroke()}
-      x.fillStyle=a.a?'rgba(248,113,113,.9)':'rgba('+lc+','+(L?.6:.75)+')';x.beginPath();x.arc(a.x,a.y,a.a?a.r+1.2:a.r,0,6.3);x.fill();
-    }
-    pk=pk.filter(function(p){p.t+=.018;if(p.t>1)return false;var px=p.a.x+(p.b.x-p.a.x)*p.t,py=p.a.y+(p.b.y-p.a.y)*p.t;
-      x.fillStyle='rgba('+p.c+',.95)';x.shadowColor='rgba('+p.c+',1)';x.shadowBlur=10;x.beginPath();x.arc(px,py,2.6,0,6.3);x.fill();x.shadowBlur=0;return true});
-    if(!reduce)requestAnimationFrame(draw);
-  }
-  requestAnimationFrame(draw);
-})();
 
 /* marquee */
 var tools=[['MITRE ATT&CK','var(--amber)'],['NIST CSF','var(--violet)'],['ISO 27001','var(--violet)'],['NCA ECC','var(--violet)'],['Saudi PDPL','var(--violet)'],['GDPR','var(--violet)'],['CIS Benchmarks','var(--cyan)'],['AWS','var(--cyan)'],['Terraform','var(--cyan)'],['OPA / Rego','var(--cyan)'],['GitHub Actions','var(--cyan)'],['Docker','var(--cyan)']],
