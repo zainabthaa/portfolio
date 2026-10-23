@@ -1,23 +1,23 @@
 :root{
-  --bg:#ece4d7;--bg-2:#e2d8c8;--surface:rgba(255,255,255,.7);--surface-solid:#fbf7f0;--surface-2:rgba(47,62,70,.045);
-  --text:#2f3e46;--muted:#60655c;--subtle:#7c7f72;--border:rgba(47,62,70,.13);--border-strong:rgba(47,62,70,.24);
-  --cyan:#52796f;--violet:#3f5d64;--teal:#6f8f7c;--pink:#8a5a3f;--amber:#8a6b2f;--green:#577a5b;--red:#a65a3c;
-  --grad:linear-gradient(120deg,#7a9f88 0%,#52796f 50%,#3b5a52 100%);
-  --btn-grad:linear-gradient(120deg,#354f52 0%,#52796f 100%);
-  --glow:0 0 0 1px rgba(82,121,111,.3),0 10px 40px -12px rgba(53,79,82,.26);
-  --shadow:0 20px 50px -24px rgba(47,62,70,.22);
-  --term-bg:#22333b;
+  --bg:#f5f7fb;--bg-2:#eef2f8;--surface:rgba(255,255,255,.78);--surface-solid:#fff;--surface-2:rgba(15,23,42,.035);
+  --text:#0b1324;--muted:#46536a;--subtle:#64748b;--border:rgba(15,23,42,.10);--border-strong:rgba(15,23,42,.2);
+  --cyan:#0891b2;--violet:#7c3aed;--teal:#0d9488;--pink:#db2777;--amber:#b45309;--green:#15803d;--red:#dc2626;
+  --grad:linear-gradient(120deg,#0891b2 0%,#4f46e5 50%,#9333ea 100%);
+  --btn-grad:linear-gradient(120deg,#0e7490 0%,#4f46e5 55%,#7c3aed 100%);
+  --glow:0 0 0 1px rgba(8,145,178,.3),0 10px 40px -12px rgba(79,70,229,.3);
+  --shadow:0 20px 50px -24px rgba(15,23,42,.25);
+  --term-bg:#0b1020;
   color-scheme:light;
 }
 :root[data-theme="dark"]{
-  --bg:#22333b;--bg-2:#1b2930;--surface:rgba(52,79,82,.32);--surface-solid:#2b3d44;--surface-2:rgba(234,224,213,.05);
-  --text:#eae0d5;--muted:#a7b0a4;--subtle:#8a938b;--border:rgba(202,210,197,.14);--border-strong:rgba(202,210,197,.28);
-  --cyan:#84a98c;--violet:#7fb0ba;--teal:#a9c6af;--pink:#cf9b76;--amber:#d2a860;--green:#8fb58f;--red:#e0906a;
-  --grad:linear-gradient(120deg,#a9c6af 0%,#84a98c 50%,#cad2c5 100%);
-  --btn-grad:linear-gradient(120deg,#3f6b5f 0%,#52796f 100%);
-  --glow:0 0 0 1px rgba(132,169,140,.25),0 10px 40px -10px rgba(82,121,111,.4);
-  --shadow:0 20px 50px -20px rgba(0,0,0,.55);
-  --term-bg:#1b2930;
+  --bg:#060912;--bg-2:#0a0f1d;--surface:rgba(18,25,43,.62);--surface-solid:#111827;--surface-2:rgba(255,255,255,.04);
+  --text:#e6edf7;--muted:#9aa8bf;--subtle:#6b7a93;--border:rgba(148,163,184,.14);--border-strong:rgba(148,163,184,.28);
+  --cyan:#22d3ee;--violet:#a78bfa;--teal:#2dd4bf;--pink:#f472b6;--amber:#fbbf24;--green:#4ade80;--red:#f87171;
+  --grad:linear-gradient(120deg,#22d3ee 0%,#818cf8 50%,#c084fc 100%);
+  --btn-grad:linear-gradient(120deg,#0e7490 0%,#4f46e5 55%,#7c3aed 100%);
+  --glow:0 0 0 1px rgba(34,211,238,.25),0 10px 40px -10px rgba(34,211,238,.35);
+  --shadow:0 20px 50px -20px rgba(0,0,0,.6);
+  --term-bg:#0b1020;
   color-scheme:dark;
 }
 *{box-sizing:border-box}
@@ -30,15 +30,15 @@ h1,h2,h3{font-family:"Space Grotesk",Inter,sans-serif;letter-spacing:-.02em}
 .mono{font-family:"JetBrains Mono",ui-monospace,monospace}
 .wrap{max-width:1180px;margin:0 auto;padding:0 20px}
 .grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-::selection{background:rgba(82,121,111,.28)}
+::selection{background:rgba(34,211,238,.3)}
 
 /* ambient background */
 .bg-grid{position:fixed;inset:0;z-index:-2;pointer-events:none;
   background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);
   background-size:56px 56px;mask-image:radial-gradient(ellipse at 50% 0%,#000 0%,transparent 70%);-webkit-mask-image:radial-gradient(ellipse at 50% 0%,#000 0%,transparent 70%);opacity:.5}
 .blob{position:fixed;z-index:-1;border-radius:50%;filter:blur(110px);opacity:.14;pointer-events:none}
-.blob.b1{width:520px;height:520px;background:#52796f;top:-160px;left:-120px}
-.blob.b2{width:480px;height:480px;background:#c6ac8f;top:30vh;right:-180px;animation-delay:-8s}
+.blob.b1{width:520px;height:520px;background:#22d3ee;top:-160px;left:-120px}
+.blob.b2{width:480px;height:480px;background:#8b5cf6;top:30vh;right:-180px;animation-delay:-8s}
 .blob.b3{width:380px;height:380px;background:#ec4899;bottom:-160px;left:30vw;opacity:.14;animation-delay:-14s}
 :root[data-theme="dark"] .blob{opacity:.28}
 @keyframes drift{to{transform:translate(80px,60px) scale(1.15)}}
@@ -69,7 +69,7 @@ header.nav.hide{transform:translateY(-120%)}
 .btn{position:relative;display:inline-flex;align-items:center;gap:9px;padding:12px 20px;border-radius:12px;font-weight:600;font-size:15px;border:1px solid var(--border-strong);background:var(--surface-2);color:var(--text);cursor:pointer;transition:transform .2s,border-color .2s,box-shadow .2s;overflow:hidden}
 .btn:hover{transform:translateY(-2px);border-color:var(--cyan);box-shadow:var(--glow)}
 .btn svg{width:18px;height:18px;flex:none}
-.btn.primary{background:var(--btn-grad);border:0;color:#f5efe4}
+.btn.primary{background:var(--btn-grad);border:0;color:#fff}
 .btn.primary::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.55) 50%,transparent 70%);transform:translateX(-120%);transition:transform .7s}
 .btn.primary:hover::after{transform:translateX(120%)}
 
@@ -222,7 +222,7 @@ h2{font-size:clamp(32px,5vw,50px);line-height:1.05;margin:12px 0 12px}
 @media (max-width:900px){.swipe-hint{display:block}}
 
 /* diagram */
-.diagram{width:100%;height:100%;background:#22333b;border:1px solid rgba(202,210,197,.18);border-radius:14px;padding:14px}
+.diagram{width:100%;height:100%;background:#0b1020;border:1px solid rgba(148,163,184,.2);border-radius:14px;padding:14px}
 .diagram svg{width:100%;height:100%}
 .diagram text{font-family:Inter,sans-serif}
 .pkt{offset-rotate:0deg;animation:travel 3.6s linear infinite}
@@ -388,7 +388,7 @@ a.cert:hover .cert-view{opacity:1;gap:10px}
 .docshot img{background:#fff}
 .honor-link{color:inherit;text-decoration:none;border-bottom:1px dashed color-mix(in srgb,var(--amber) 70%,transparent);transition:color .2s}
 .honor-link:hover{color:var(--amber);text-decoration:none}
-.chain-svg{width:100%;height:100%;background:#22333b;border:1px solid rgba(202,210,197,.18);border-radius:14px;padding:14px}
+.chain-svg{width:100%;height:100%;background:#0b1020;border:1px solid rgba(148,163,184,.2);border-radius:14px;padding:14px}
 .chain-svg svg{width:100%;height:100%}
 .ach-card .badge{display:inline-flex;align-items:center;gap:8px;font:600 12.5px "JetBrains Mono",ui-monospace,monospace;color:var(--amber);background:color-mix(in srgb,var(--amber) 13%,transparent);border:1px solid color-mix(in srgb,var(--amber) 30%,transparent);padding:5px 12px;border-radius:999px}
 .ach-card .badge svg{width:14px;height:14px}
