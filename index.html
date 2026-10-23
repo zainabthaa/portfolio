@@ -314,7 +314,12 @@ dialog[open]{animation:pop .35s cubic-bezier(.2,.8,.2,1)}
 .certs{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:20px}
 @media (max-width:900px){.certs{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:480px){.certs{grid-template-columns:1fr}}
-.cert{padding:22px}
+.cert{padding:22px;text-decoration:none;color:inherit}
+a.cert{display:block}
+a.cert:hover{text-decoration:none}
+.cert-view{margin-top:14px;display:inline-flex;align-items:center;gap:6px;font:600 12.5px "JetBrains Mono",ui-monospace,monospace;color:var(--c);opacity:.85;transition:gap .2s,opacity .2s}
+a.cert:hover .cert-view{opacity:1;gap:10px}
+.cert-view svg{width:13px;height:13px}
 .cert .issuer{font:600 12px "JetBrains Mono",ui-monospace,Menlo,monospace;color:var(--c)}
 .cert h4{font:600 16.5px/1.3 "Space Grotesk",Inter,system-ui,sans-serif;margin:10px 0 14px}
 .cert .yr{font-size:13px;color:var(--subtle)}
@@ -376,13 +381,13 @@ dialog[open]{animation:pop .35s cubic-bezier(.2,.8,.2,1)}
 .exp-card h4{font:600 18px/1.3 "Space Grotesk",Inter,system-ui,sans-serif;margin:0 0 4px}
 .exp-card .org{font-size:13.5px;color:var(--subtle);margin-bottom:12px}
 .exp-card p{margin:0;color:var(--muted);font-size:14.5px}
-.ach-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start}
+.ach-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
 @media (max-width:900px){.ach-grid{grid-template-columns:1fr}}
 .ach-card{padding:0;overflow:hidden;display:flex;flex-direction:column}
-.ach-cert{margin:0;cursor:zoom-in;background:#f1f1f1;border-bottom:1px solid var(--border);overflow:hidden}
-.ach-cert img{width:100%;display:block;transition:transform .4s}
+.ach-cert{margin:0;cursor:zoom-in;background:#fff;border-bottom:1px solid var(--border);overflow:hidden;aspect-ratio:7/5}
+.ach-cert img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;transition:transform .4s}
 .ach-card:hover .ach-cert img{transform:scale(1.04)}
-.ach-body{padding:24px}
+.ach-body{padding:24px;flex:1}
 .ach-body.ach-noimg{padding-top:26px}
 .cvcard{margin-top:28px;padding:18px;display:flex;gap:22px;align-items:center}
 @media (max-width:520px){.cvcard{flex-direction:column;align-items:stretch}}
@@ -1066,9 +1071,9 @@ footer{padding:50px 0 40px;color:var(--subtle);font-size:13.5px;text-align:cente
     </div>
     <div class="certs" style="margin-top:0">
       <div class="gcard cert c-soc reveal"><div class="seal"></div><div class="issuer"><span class="clogo"><img src="assets/icons/comptia.svg" alt=""></span>CompTIA</div><h4>Security+</h4><div class="prog">In progress <span class="pbar"><i></i></span></div><div class="yr">Expected Jan 2027</div></div>
-      <div class="gcard cert c-cloud reveal" style="--d:.08s"><div class="seal"></div><div class="issuer"><span class="clogo"><img src="assets/icons/cisco.svg" alt=""></span>Cisco</div><h4>Security Operations Center (SOC) Fundamentals</h4><div class="yr">2026</div></div>
-      <div class="gcard cert c-grc reveal" style="--d:.16s"><div class="seal"></div><div class="issuer"><span class="clogo ibm">IBM</span>IBM</div><h4>Containers w/ Docker, Kubernetes &amp; OpenShift</h4><div class="yr">2026</div></div>
-      <div class="gcard cert c-app reveal" style="--d:.24s"><div class="seal"></div><div class="issuer"><span class="clogo ibm">IBM</span>IBM</div><h4>Introduction to DevOps</h4><div class="yr">2025</div></div>
+      <a class="gcard cert c-cloud reveal" style="--d:.08s" href="https://www.coursera.org/account/accomplishments/records/T7HHIL4JR9JA" target="_blank" rel="noopener"><div class="seal"></div><div class="issuer"><span class="clogo"><img src="assets/icons/cisco.svg" alt=""></span>Cisco</div><h4>Security Operations Center (SOC) Fundamentals</h4><div class="yr">2026</div><div class="cert-view">View credential <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></div></a>
+      <a class="gcard cert c-grc reveal" style="--d:.16s" href="https://www.coursera.org/account/accomplishments/records/8SVOY5853UDY" target="_blank" rel="noopener"><div class="seal"></div><div class="issuer"><span class="clogo ibm">IBM</span>IBM</div><h4>Containers w/ Docker, Kubernetes &amp; OpenShift</h4><div class="yr">2026</div><div class="cert-view">View credential <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></div></a>
+      <a class="gcard cert c-app reveal" style="--d:.24s" href="https://coursera.org/share/493799e1ff9ba172d677607b8829f36b" target="_blank" rel="noopener"><div class="seal"></div><div class="issuer"><span class="clogo ibm">IBM</span>IBM</div><h4>Introduction to DevOps</h4><div class="yr">2025</div><div class="cert-view">View credential <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></div></a>
     </div>
   </div>
 </section>
