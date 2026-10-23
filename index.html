@@ -238,7 +238,7 @@ h2{font-size:clamp(32px,5vw,50px);line-height:1.05;margin:12px 0 12px}
 .diagram{width:100%;height:100%}
 .diagram svg{width:100%;height:100%}
 .diagram text{font-family:Inter,sans-serif}
-.pkt{offset-rotate:0deg;animation:travel 3.2s linear infinite}
+.pkt{offset-rotate:0deg;animation:travel 3.6s linear infinite}
 @keyframes travel{from{offset-distance:0%}to{offset-distance:100%}}
 
 /* modal */
@@ -343,6 +343,19 @@ dialog[open]{animation:pop .35s cubic-bezier(.2,.8,.2,1)}
 .ring b{position:absolute;inset:0;display:grid;place-items:center;font:700 26px "Space Grotesk",Inter,system-ui,sans-serif}
 .honor{display:flex;gap:10px;align-items:center;font-size:14.5px;color:var(--muted);margin:6px 0}
 .honor svg{width:18px;height:18px;color:var(--amber);flex:none}
+.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:start}
+@media (max-width:900px){.about-grid{grid-template-columns:1fr}}
+.about-text p{color:var(--muted);font-size:17px;margin:0 0 18px}
+.about-text p b{color:var(--text);font-weight:600}
+.about-text .lead-p{font-size:20px;color:var(--text);line-height:1.55}
+.now{margin-top:26px;padding:22px 24px}
+.now h4{font:500 12.5px "JetBrains Mono",ui-monospace,monospace;color:var(--subtle);margin:0 0 14px}
+.now ul{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.now li{display:flex;gap:12px;align-items:flex-start;font-size:15px;color:var(--muted)}
+.now li b{color:var(--text);font-weight:600}
+.now .ni{width:32px;height:32px;flex:none;border-radius:9px;display:grid;place-items:center;color:var(--c);background:color-mix(in srgb,var(--c) 14%,transparent);border:1px solid color-mix(in srgb,var(--c) 30%,transparent)}
+.now .ni svg{width:16px;height:16px}
+.exp-wrap{max-width:860px}
 .col-title{display:flex;align-items:center;gap:10px;font-size:22px;margin:0 0 20px}
 .col-title svg{width:22px;height:22px;color:var(--cyan)}
 .tl-item .org{font-size:13.5px;color:var(--subtle);margin-bottom:6px}
@@ -381,8 +394,9 @@ footer{padding:50px 0 40px;color:var(--subtle);font-size:13.5px;text-align:cente
   <div class="nav-inner"><div class="nav-bar">
     <a class="brand" href="#top"><span class="logo">ZT</span>Zainab Taha</a>
     <ul>
-      <li><a href="#experience">Experience</a></li>
+      <li><a href="#about">About</a></li>
       <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
       <li><a href="#research">Research</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#certs">Certifications</a></li>
@@ -402,14 +416,14 @@ footer{padding:50px 0 40px;color:var(--subtle);font-size:13.5px;text-align:cente
 <section class="hero">
   <div class="wrap">
     <div>
-      <span class="status reveal"><span class="dot"></span>Open to cybersecurity internships · Jan 2027</span>
+      <span class="status reveal"><span class="dot"></span>Open for opportunities</span>
       <h1 class="reveal" style="--d:.08s">Hi, I'm <span class="grad-text">Zainab Taha</span></h1>
       <p class="role reveal" style="--d:.16s"><span class="t-dim">&gt;</span> <span class="typed" id="typed"></span><span class="caret"></span></p>
       <p class="lead reveal" style="--d:.24s">Cybersecurity student at <b>Effat University</b> (GPA 3.86). I build labs that <b>attack, detect and prove compliance</b>, and I map the results to MITRE ATT&amp;CK, NIST CSF, ISO 27001, NCA ECC and PDPL. I'm also a <b>published co-author</b> on AI-based intrusion detection for energy-sector OT networks.</p>
       <div class="cta reveal" style="--d:.32s">
         <a class="btn primary" href="#projects">Explore my work
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn" href="#experience">Experience &amp; education</a>
+        <a class="btn" href="#about">About me</a>
       </div>
     </div>
     <aside class="gcard tilt pcard reveal" style="--d:.2s" aria-label="Profile summary">
@@ -422,7 +436,7 @@ footer{padding:50px 0 40px;color:var(--subtle);font-size:13.5px;text-align:cente
       </div>
       <ul class="pc-facts">
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>Jeddah, Saudi Arabia</li>
-        <li><span class="dot"></span>Available for internships · Jan 2027</li>
+        <li><span class="dot"></span>Open for opportunities</li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg>B.Sc. CS, Cybersecurity · GPA 3.86</li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>Published co-author · ICEE 2026</li>
       </ul>
@@ -444,26 +458,28 @@ footer{padding:50px 0 40px;color:var(--subtle);font-size:13.5px;text-align:cente
   <div class="mq-row rev" id="mq2"></div>
 </div>
 
-<!-- EXPERIENCE & EDUCATION -->
-<section class="block" id="experience">
+<!-- ABOUT -->
+<section class="block" id="about">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="kicker">01 / experience</span>
-      <h2>Experience &amp; <span class="grad-text">education</span></h2>
+      <span class="kicker">01 / about</span>
+      <h2>About <span class="grad-text">me</span></h2>
     </div>
-    <div class="two">
-      <div>
-        <h3 class="col-title reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>Experience</h3>
-        <div class="tl" id="tl">
-          <div class="line"><i id="tlfill"></i></div>
-          <div class="gcard tl-item c-grc reveal"><div class="d">Aug – Oct 2026</div><h4>Undergraduate Researcher</h4><div class="org">Department of Computer Science, Effat University</div><p>Co-authored a peer-reviewed journal paper (ICEE, 2026) presenting an open, Docker-based IT/OT testbed with rule-based and Random Forest intrusion detection for energy-sector networks.</p></div>
-          <div class="gcard tl-item c-cloud reveal"><div class="d">2025 – 2026</div><h4>Vice President &amp; Co-founder, Cyber Security Club</h4><div class="org">Effat University</div><p>Co-led planning and delivery of hands-on labs, competitions and security workshops.</p></div>
-          <div class="gcard tl-item c-app reveal"><div class="d">2026 – present</div><h4>Vice President, Society of Petroleum Engineers</h4><div class="org">SPE Chapter, Effat University</div><p>Co-directing strategic planning and operations for technical workshops and community initiatives.</p></div>
-          <div class="gcard tl-item c-grc reveal"><div class="d">2025 – 2026</div><h4>Nominee, Student Shura Council President</h4><div class="org">Effat University</div><p>Nominated for the Queen Effat Citizenship Award to serve as student-body representative.</p></div>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p class="lead-p">I'm a senior cybersecurity student at Effat University. I care about security that works in practice: writing the policy is only half the job, and the other half is proving the control behind it holds up.</p>
+        <p>Most of my work sits where <b>GRC meets engineering</b>. I built a purple-team lab that turns IDS detections into <b>NIST CSF, ISO 27001 and NCA ECC</b> evidence, and a CI/CD pipeline that blocks non-compliant AWS infrastructure before it's merged. I also co-authored a <b>peer-reviewed paper</b> on machine-learning intrusion detection for energy-sector OT networks.</p>
+        <p>Outside the lab, I co-founded and help lead the university's <b>Cyber Security Club</b>, where we run hands-on workshops and competitions.</p>
+        <div class="gcard now reveal">
+          <h4>// right now</h4>
+          <ul>
+            <li class="c-soc"><span class="ni"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5.5 3.4 9.7 8 11 4.6-1.3 8-5.5 8-11V5z"/></svg></span><span><b>Building</b> my senior capstone, a purple-team lateral movement detection platform</span></li>
+            <li class="c-grc"><span class="ni"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M8.2 13.2 7 22l5-3 5 3-1.2-8.8"/></svg></span><span><b>Preparing</b> for CompTIA Security+ (expected Jan 2027)</span></li>
+            <li class="c-cloud"><span class="ni"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></span><span><b>Open to</b> opportunities in GRC, cloud security and security operations</span></li>
+          </ul>
         </div>
       </div>
       <div>
-        <h3 class="col-title reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg>Education</h3>
         <div class="gcard edu reveal">
           <span class="tag c-cloud">B.Sc. Computer Science · Cybersecurity Track</span>
           <h3 style="font-size:26px;margin:14px 0 2px">Effat University</h3>
@@ -539,40 +555,46 @@ footer{padding:50px 0 40px;color:var(--subtle);font-size:13.5px;text-align:cente
               <div class="visual">
                 <div class="frames">
                   <div class="diagram" data-cap="Lab architecture · 13 containers · 3 subnets">
-                    <svg viewBox="0 0 520 400" role="img" aria-label="Three isolated subnets (attacker, corporate, GRC) connected through an inline IDS sensor">
+                    <svg viewBox="0 0 520 430" role="img" aria-label="Attacker network and GRC network connect through an inline IDS sensor to the corporate internal network; attack traffic flows from the attacker through the IDS into the internal network">
                       <defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="#64748b"/></marker></defs>
-                      <rect x="10" y="10" width="190" height="122" rx="12" fill="rgba(251,191,36,.10)" stroke="#fbbf24" stroke-opacity=".5"/>
-                      <text x="24" y="34" font-size="13" font-weight="700" fill="#fbbf24">Attacker network</text>
-                      <text x="24" y="50" font-size="10.5" fill="#94a3b8" font-family="JetBrains Mono",ui-monospace,Menlo,monospace>172.21.0.0/24</text>
-                      <g font-size="12" text-anchor="middle" fill="#e2e8f0"><rect x="24" y="60" width="162" height="28" rx="7" fill="#0f172a" stroke="#334155"/><text x="105" y="79">Attacker (Kali)</text>
-                      <rect x="24" y="94" width="162" height="28" rx="7" fill="#0f172a" stroke="#334155"/><text x="105" y="113">Router</text></g>
-                      <rect x="320" y="10" width="190" height="122" rx="12" fill="rgba(167,139,250,.10)" stroke="#a78bfa" stroke-opacity=".5"/>
+                      <!-- attacker network -->
+                      <rect x="10" y="10" width="190" height="112" rx="12" fill="rgba(248,113,113,.08)" stroke="#f87171" stroke-opacity=".5"/>
+                      <text x="24" y="34" font-size="13" font-weight="700" fill="#f87171">Attacker network</text>
+                      <text x="24" y="50" font-size="10.5" fill="#94a3b8" font-family="JetBrains Mono, monospace">172.21.0.0/24</text>
+                      <rect x="24" y="70" width="162" height="32" rx="7" fill="#0f172a" stroke="#f87171" stroke-opacity=".6"/><text x="105" y="91" font-size="12" text-anchor="middle" fill="#e2e8f0">Attacker (Kali)</text>
+                      <!-- grc network -->
+                      <rect x="320" y="10" width="190" height="112" rx="12" fill="rgba(167,139,250,.10)" stroke="#a78bfa" stroke-opacity=".5"/>
                       <text x="334" y="34" font-size="13" font-weight="700" fill="#a78bfa">GRC network</text>
-                      <text x="334" y="50" font-size="10.5" fill="#94a3b8" font-family="JetBrains Mono",ui-monospace,Menlo,monospace>172.22.0.0/24</text>
-                      <g font-size="12" text-anchor="middle" fill="#e2e8f0"><rect x="334" y="60" width="162" height="28" rx="7" fill="#0f172a" stroke="#334155"/><text x="415" y="79">Compliance dashboard</text>
-                      <rect x="334" y="94" width="162" height="28" rx="7" fill="#0f172a" stroke="#334155"/><text x="415" y="113">GRC database</text></g>
-                      <path id="p1" d="M105 132 L215 168" stroke="#64748b" stroke-width="1.6" fill="none" marker-end="url(#arr)"/>
-                      <path id="p2" d="M415 132 L305 168" stroke="#64748b" stroke-width="1.6" fill="none" marker-end="url(#arr)"/>
-                      <path id="p3" d="M260 222 L260 246" stroke="#64748b" stroke-width="1.6" fill="none" marker-end="url(#arr)"/>
-                      <rect x="180" y="168" width="160" height="54" rx="12" fill="#22d3ee"><animate attributeName="opacity" values="1;.75;1" dur="2s" repeatCount="indefinite"/></rect>
-                      <text x="260" y="191" font-size="13" font-weight="700" text-anchor="middle" fill="#060912">Inline IDS sensor</text>
-                      <text x="260" y="208" font-size="10.5" text-anchor="middle" fill="#060912">behavioural + signatures</text>
-                      <circle r="4.5" fill="#f87171" class="pkt" style="offset-path:path('M105 132 L215 168')"/>
-                      <circle r="4" fill="#a78bfa" class="pkt" style="offset-path:path('M305 168 L415 132');animation-delay:-1.4s"/>
-                      <rect x="10" y="248" width="500" height="142" rx="12" fill="rgba(34,211,238,.07)" stroke="#22d3ee" stroke-opacity=".45"/>
-                      <text x="24" y="271" font-size="13" font-weight="700" fill="#22d3ee">Corporate internal network</text>
-                      <text x="24" y="287" font-size="10.5" fill="#94a3b8" font-family="JetBrains Mono",ui-monospace,Menlo,monospace>172.20.0.0/24</text>
+                      <text x="334" y="50" font-size="10.5" fill="#94a3b8" font-family="JetBrains Mono, monospace">172.22.0.0/24</text>
+                      <g font-size="12" text-anchor="middle" fill="#e2e8f0"><rect x="334" y="58" width="162" height="26" rx="7" fill="#0f172a" stroke="#334155"/><text x="415" y="75">Compliance dashboard</text>
+                      <rect x="334" y="88" width="162" height="26" rx="7" fill="#0f172a" stroke="#334155"/><text x="415" y="105">GRC database</text></g>
+                      <!-- links -->
+                      <path d="M105 122 L205 170" stroke="#f87171" stroke-opacity=".7" stroke-width="1.6" fill="none" marker-end="url(#arr)"/>
+                      <path d="M415 122 L315 170" stroke="#a78bfa" stroke-opacity=".6" stroke-width="1.4" stroke-dasharray="4 4" fill="none"/>
+                      <text x="398" y="158" font-size="10" fill="#a78bfa" font-family="JetBrains Mono, monospace">JIT API only</text>
+                      <path d="M260 226 L260 254" stroke="#64748b" stroke-width="1.6" fill="none" marker-end="url(#arr)"/>
+                      <rect x="10" y="256" width="500" height="164" rx="12" fill="rgba(34,211,238,.07)" stroke="#22d3ee" stroke-opacity=".45"/>
+                      <!-- attack packets: attacker -> IDS -> internal (drawn under the sensor) -->
+                      <circle r="4.5" fill="#f87171" class="pkt" style="offset-path:path('M105 122 L225 180 L260 198 L260 304')"/>
+                      <circle r="4.5" fill="#f87171" class="pkt" style="offset-path:path('M105 122 L225 180 L260 198 L260 304');animation-delay:-1.8s"/>
+                      <!-- IDS -->
+                      <rect x="180" y="170" width="160" height="56" rx="12" fill="#22d3ee"><animate attributeName="opacity" values="1;.8;1" dur="2.4s" repeatCount="indefinite"/></rect>
+                      <text x="260" y="194" font-size="13" font-weight="700" text-anchor="middle" fill="#060912">Inline IDS sensor</text>
+                      <text x="260" y="211" font-size="10.5" text-anchor="middle" fill="#060912">behavioural + signatures</text>
+                      <!-- internal network -->
+                      <text x="24" y="279" font-size="13" font-weight="700" fill="#22d3ee">Corporate internal network</text>
+                      <text x="24" y="295" font-size="10.5" fill="#94a3b8" font-family="JetBrains Mono, monospace">172.20.0.0/24</text>
                       <g font-size="11.5" text-anchor="middle" fill="#e2e8f0">
-                        <rect x="24" y="298" width="114" height="28" rx="7" fill="#0f172a" stroke="#334155"/><text x="81" y="317">Web portal</text>
-                        <rect x="146" y="298" width="114" height="28" rx="7" fill="#0f172a" stroke="#334155"/><text x="203" y="317">Company DB</text>
-                        <rect x="268" y="298" width="114" height="28" rx="7" fill="#0f172a" stroke="#334155"/><text x="325" y="317">Company API</text>
-                        <rect x="390" y="298" width="106" height="28" rx="7" fill="#0f172a" stroke="#334155"/><text x="443" y="317">SOC dashboard</text>
-                        <rect x="24" y="334" width="114" height="28" rx="7" fill="#0f172a" stroke="#334155"/><text x="81" y="353">HR PC</text>
-                        <rect x="146" y="334" width="114" height="28" rx="7" fill="#0f172a" stroke="#334155"/><text x="203" y="353">IT PC</text>
-                        <rect x="268" y="334" width="114" height="28" rx="7" fill="#0f172a" stroke="#334155"/><text x="325" y="353">Finance PC</text>
-                        <rect x="390" y="334" width="106" height="28" rx="7" fill="#0f172a" stroke="#334155"/><text x="443" y="353">Red-team UI</text>
+                        <rect x="24" y="306" width="150" height="28" rx="7" fill="#0f172a" stroke="#22d3ee" stroke-opacity=".6"/><text x="99" y="325">Router</text>
+                        <rect x="184" y="306" width="150" height="28" rx="7" fill="#0f172a" stroke="#334155"/><text x="259" y="325">Web portal</text>
+                        <rect x="344" y="306" width="150" height="28" rx="7" fill="#0f172a" stroke="#334155"/><text x="419" y="325">Company DB</text>
+                        <rect x="24" y="342" width="150" height="28" rx="7" fill="#0f172a" stroke="#334155"/><text x="99" y="361">Company API</text>
+                        <rect x="184" y="342" width="150" height="28" rx="7" fill="#0f172a" stroke="#334155"/><text x="259" y="361">SOC dashboard</text>
+                        <rect x="344" y="342" width="150" height="28" rx="7" fill="#0f172a" stroke="#334155"/><text x="419" y="361">Red-team UI</text>
+                        <rect x="24" y="378" width="150" height="28" rx="7" fill="#0f172a" stroke="#334155"/><text x="99" y="397">HR PC</text>
+                        <rect x="184" y="378" width="150" height="28" rx="7" fill="#0f172a" stroke="#334155"/><text x="259" y="397">IT PC</text>
+                        <rect x="344" y="378" width="150" height="28" rx="7" fill="#0f172a" stroke="#334155"/><text x="419" y="397">Finance PC</text>
                       </g>
-                      <text x="24" y="380" font-size="11" fill="#94a3b8">GRC reaches company data only through just-in-time API grants</text>
                     </svg>
                   </div>
                   <!-- CAPSTONE SCREENSHOTS: add files to assets/img/ then uncomment
@@ -775,11 +797,31 @@ footer{padding:50px 0 40px;color:var(--subtle);font-size:13.5px;text-align:cente
   </div>
 </section>
 
+<!-- EXPERIENCE -->
+<section class="block" id="experience">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="kicker">04 / experience</span>
+      <h2>Experience &amp; <span class="grad-text">leadership</span></h2>
+      <p>Research and leadership roles alongside my studies.</p>
+    </div>
+    <div class="exp-wrap">
+        <div class="tl" id="tl">
+          <div class="line"><i id="tlfill"></i></div>
+          <div class="gcard tl-item c-grc reveal"><div class="d">Aug – Oct 2026</div><h4>Undergraduate Researcher</h4><div class="org">Department of Computer Science, Effat University</div><p>Co-authored a peer-reviewed journal paper (ICEE, 2026) presenting an open, Docker-based IT/OT testbed with rule-based and Random Forest intrusion detection for energy-sector networks.</p></div>
+          <div class="gcard tl-item c-cloud reveal"><div class="d">2025 – 2026</div><h4>Vice President &amp; Co-founder, Cyber Security Club</h4><div class="org">Effat University</div><p>Co-led planning and delivery of hands-on labs, competitions and security workshops.</p></div>
+          <div class="gcard tl-item c-app reveal"><div class="d">2026 – present</div><h4>Vice President, Society of Petroleum Engineers</h4><div class="org">SPE Chapter, Effat University</div><p>Co-directing strategic planning and operations for technical workshops and community initiatives.</p></div>
+          <div class="gcard tl-item c-grc reveal"><div class="d">2025 – 2026</div><h4>Nominee, Student Shura Council President</h4><div class="org">Effat University</div><p>Nominated for the Queen Effat Citizenship Award to serve as student-body representative.</p></div>
+        </div>
+    </div>
+  </div>
+</section>
+
 <!-- RESEARCH -->
 <section class="block" id="research">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="kicker">04 / research</span>
+      <span class="kicker">05 / research</span>
       <h2>Published <span class="grad-text">research</span></h2>
       <p>Peer-reviewed work on AI-based intrusion detection for critical energy infrastructure.</p>
     </div>
@@ -821,7 +863,7 @@ footer{padding:50px 0 40px;color:var(--subtle);font-size:13.5px;text-align:cente
 <section class="block" id="skills">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="kicker">05 / toolkit</span>
+      <span class="kicker">06 / toolkit</span>
       <h2>Skills I <span class="grad-text">use, not just list</span></h2>
       <p>Every skill here shows up in at least one project above.</p>
     </div>
@@ -837,7 +879,7 @@ footer{padding:50px 0 40px;color:var(--subtle);font-size:13.5px;text-align:cente
 <section class="block" id="certs">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="kicker">06 / certifications</span>
+      <span class="kicker">07 / certifications</span>
       <h2>Certifications &amp; <span class="grad-text">training</span></h2>
       <p>Industry training that backs up the hands-on work.</p>
     </div>
@@ -854,9 +896,9 @@ footer{padding:50px 0 40px;color:var(--subtle);font-size:13.5px;text-align:cente
 <section class="block" id="contact">
   <div class="wrap">
     <div class="contact reveal">
-      <span class="kicker">07 / contact</span>
+      <span class="kicker">08 / contact</span>
       <h2>Let's build something <span class="grad-text">secure</span></h2>
-      <p>I'm looking for a cybersecurity internship from January 2027 in GRC, cloud security or a SOC. I'm based in Jeddah, Saudi Arabia.</p>
+      <p>I'm open to opportunities in GRC, cloud security and security operations. I'm based in Jeddah, Saudi Arabia.</p>
       <div class="cta">
         <button class="btn primary" id="copy-email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>zaataha25@gmail.com</button>
         <a class="btn" href="https://www.linkedin.com/in/zainab-taha-cs" target="_blank" rel="noopener">LinkedIn</a>
@@ -925,7 +967,7 @@ type();
 
 /* marquee */
 var tools=[['MITRE ATT&CK','var(--amber)'],['NIST CSF','var(--violet)'],['ISO 27001','var(--violet)'],['NCA ECC','var(--violet)'],['Saudi PDPL','var(--violet)'],['GDPR','var(--violet)'],['CIS Benchmarks','var(--cyan)'],['AWS','var(--cyan)'],['Terraform','var(--cyan)'],['OPA / Rego','var(--cyan)'],['GitHub Actions','var(--cyan)'],['Docker','var(--cyan)']],
-    tools2=[['Python','var(--pink)'],['Bash','var(--pink)'],['Kali Linux','var(--amber)'],['Wireshark','var(--amber)'],['tcpdump','var(--amber)'],['sqlmap','var(--amber)'],['Semgrep','var(--pink)'],['CISO Assistant','var(--violet)'],['Conftest','var(--cyan)'],['MySQL','var(--pink)'],['Linux','var(--amber)'],['Java','var(--pink)']];
+    tools2=[['Python','var(--pink)'],['Bash','var(--pink)'],['Kali Linux','var(--amber)'],['Wireshark','var(--amber)'],['Nmap','var(--amber)'],['tcpdump','var(--amber)'],['sqlmap','var(--amber)'],['Semgrep','var(--pink)'],['CISO Assistant','var(--violet)'],['Conftest','var(--cyan)'],['MySQL','var(--pink)'],['Linux','var(--amber)'],['Java','var(--pink)']];
 function fill(id,arr){var h=arr.concat(arr).map(function(t){return '<span class="mq-item" style="--c:'+t[1]+'"><i></i>'+t[0]+'</span>'}).join('');$(id).innerHTML=h}
 fill('#mq1',tools);fill('#mq2',tools2);
 
@@ -1030,7 +1072,7 @@ var skills=[
  {k:'GRC & Frameworks',c:'var(--violet)',ico:I.shieldcheck,d:'Turning regulations into controls, and controls into evidence.',s:[C('NIST CSF','shieldcheck'),C('NIST SP 800-30','gauge'),C('ISO 27001','award'),C('ISO 27005','grid'),C('NCA ECC','flag'),C('Saudi PDPL','userlock'),C('GDPR','lock'),C('CIS Benchmarks','checklist'),C('Risk assessment','alert'),C('Gap analysis','split'),C('Incident response planning','siren'),C('Security policies','doc'),C('CISO Assistant','dash')]},
  {k:'Security Operations',c:'var(--amber)',ico:'<path d="M22 12h-4l-3 9L9 3l-3 9H2"/>',d:'Detecting, triaging and emulating real attacker behaviour.',s:[C('SOC monitoring','monitor'),C('Intrusion detection','radar'),C('Incident response','siren'),C('Adversary emulation','crosshair'),C('MITRE ATT&CK','matrix'),C('Vulnerability assessment','bug'),L('Penetration testing','kali'),C('sqlmap','db'),C('Semgrep (SAST)','scan'),L('OWASP Top 10','owasp'),L('ML detection (Random Forest)','scikitlearn'),L('Streamlit dashboards','streamlit')]},
  {k:'Cloud & DevSecOps',c:'var(--cyan)',ico:'<path d="M18 10h-1.3A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/>',d:'Guardrails that run automatically on every change.',s:[L('AWS','aws'),L('Terraform','terraform'),L('Docker','docker'),L('GitHub Actions','githubactions'),C('OPA / Rego','policy'),C('Conftest','checklist'),C('OIDC federation','key'),C('CI/CD security','pipe'),L('Git','git')]},
- {k:'Networking & Systems',c:'var(--teal)',ico:'<rect x="2" y="3" width="20" height="6" rx="1"/><rect x="2" y="15" width="20" height="6" rx="1"/><path d="M6 6h.01M6 18h.01"/>',d:'Designing segments and reading the traffic between them.',s:[C('TCP/IP','net'),C('Network segmentation','layers'),C('IT/OT & ICS security','factory'),L('Linux','linux'),L('Kali Linux','kali'),L('Wireshark','wireshark'),C('tcpdump','term')]},
+ {k:'Networking & Systems',c:'var(--teal)',ico:'<rect x="2" y="3" width="20" height="6" rx="1"/><rect x="2" y="15" width="20" height="6" rx="1"/><path d="M6 6h.01M6 18h.01"/>',d:'Designing segments and reading the traffic between them.',s:[C('TCP/IP','net'),C('Network segmentation','layers'),C('Nmap','radar'),C('IT/OT & ICS security','factory'),L('Linux','linux'),L('Kali Linux','kali'),L('Wireshark','wireshark'),C('tcpdump','term')]},
  {k:'Programming',c:'var(--pink)',ico:'<path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/>',d:'Writing my own tools when off-the-shelf ones don’t fit.',s:[L('Python','python'),L('Bash','bash'),L('SQL (MySQL)','mysql'),L('Java','java'),L('JavaScript','javascript'),L('PHP','php'),L('C++','cplusplus'),L('HTML / CSS','html5'),L('Flask','flask')]}
 ];
 var SV='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">';
