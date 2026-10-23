@@ -136,7 +136,8 @@ header.nav.hide{transform:translateY(-120%)}
 .pc-label{font:500 12px "JetBrains Mono",ui-monospace,monospace;color:var(--subtle);margin-bottom:10px}
 .pc-focus{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
 .pc-focus span{font-size:13px;font-weight:600;padding:5px 12px;border-radius:9px;color:var(--c);background:color-mix(in srgb,var(--c) 13%,transparent);border:1px solid color-mix(in srgb,var(--c) 30%,transparent)}
-.pc-links{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.pc-links{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+@media (max-width:420px){.pc-links{grid-template-columns:repeat(2,1fr)}}
 .pc-links a{display:flex;align-items:center;justify-content:center;gap:7px;padding:10px 6px;border-radius:11px;font-size:13.5px;font-weight:600;color:var(--text);background:var(--surface-2);border:1px solid var(--border);transition:border-color .2s,transform .2s}
 .pc-links a:hover{border-color:var(--cyan);transform:translateY(-2px)}
 .pc-links svg{width:15px;height:15px}
@@ -356,6 +357,17 @@ dialog[open]{animation:pop .35s cubic-bezier(.2,.8,.2,1)}
 .now .ni{width:32px;height:32px;flex:none;border-radius:9px;display:grid;place-items:center;color:var(--c);background:color-mix(in srgb,var(--c) 14%,transparent);border:1px solid color-mix(in srgb,var(--c) 30%,transparent)}
 .now .ni svg{width:16px;height:16px}
 .exp-wrap{max-width:860px}
+.cvcard{margin-top:28px;padding:18px;display:flex;gap:22px;align-items:center}
+@media (max-width:520px){.cvcard{flex-direction:column;align-items:stretch}}
+.cv-thumb{flex:none;width:150px;border-radius:10px;overflow:hidden;border:1px solid var(--border-strong);background:#fff;box-shadow:0 14px 30px -12px rgba(0,0,0,.6);transform:rotate(-3deg);transition:transform .35s cubic-bezier(.3,1.4,.5,1)}
+@media (max-width:520px){.cv-thumb{width:100%;transform:none;max-height:220px}}
+.cvcard:hover .cv-thumb{transform:rotate(0) scale(1.04)}
+.cv-thumb img{width:100%}
+.cv-kicker{font:500 12px "JetBrains Mono",ui-monospace,monospace;color:var(--subtle)}
+.cv-info h4{font:600 20px "Space Grotesk",Inter,system-ui,sans-serif;margin:6px 0 2px}
+.cv-info p{margin:0 0 16px;color:var(--muted);font-size:14px}
+.cv-actions{display:flex;flex-wrap:wrap;gap:10px}
+.cv-actions .btn{padding:10px 16px;font-size:14.5px}
 .col-title{display:flex;align-items:center;gap:10px;font-size:22px;margin:0 0 20px}
 .col-title svg{width:22px;height:22px;color:var(--cyan)}
 .tl-item .org{font-size:13.5px;color:var(--subtle);margin-bottom:6px}
@@ -447,6 +459,7 @@ footer{padding:50px 0 40px;color:var(--subtle);font-size:13.5px;text-align:cente
       <div class="pc-links">
         <a href="https://www.linkedin.com/in/zainab-taha-cs" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.4 20.5h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.3V9h3.4v1.6h.1c.5-.9 1.6-1.8 3.4-1.8 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2zM7.1 20.5H3.5V9h3.6v11.5zM22.2 0H1.8C.8 0 0 .8 0 1.7v20.6c0 .9.8 1.7 1.8 1.7h20.4c1 0 1.8-.8 1.8-1.7V1.7C24 .8 23.2 0 22.2 0z"/></svg>LinkedIn</a>
         <a href="https://github.com/zainabthaa" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.4-4-1.4-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.1 0 4.7-2.8 5.7-5.5 6 .4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5z"/></svg>GitHub</a>
+        <a href="assets/cv/Zainab_Taha_CV.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>CV</a>
         <a href="mailto:zaataha25@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>Email</a>
       </div>
     </aside>
@@ -467,16 +480,23 @@ footer{padding:50px 0 40px;color:var(--subtle);font-size:13.5px;text-align:cente
     </div>
     <div class="about-grid">
       <div class="about-text reveal">
-        <p class="lead-p">I'm a senior cybersecurity student at Effat University. I care about security that works in practice: writing the policy is only half the job, and the other half is proving the control behind it holds up.</p>
-        <p>Most of my work sits where <b>GRC meets engineering</b>. I built a purple-team lab that turns IDS detections into <b>NIST CSF, ISO 27001 and NCA ECC</b> evidence, and a CI/CD pipeline that blocks non-compliant AWS infrastructure before it's merged. I also co-authored a <b>peer-reviewed paper</b> on machine-learning intrusion detection for energy-sector OT networks.</p>
-        <p>Outside the lab, I co-founded and help lead the university's <b>Cyber Security Club</b>, where we run hands-on workshops and competitions.</p>
-        <div class="gcard now reveal">
-          <h4>// right now</h4>
-          <ul>
-            <li class="c-soc"><span class="ni"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5.5 3.4 9.7 8 11 4.6-1.3 8-5.5 8-11V5z"/></svg></span><span><b>Building</b> my senior capstone, a purple-team lateral movement detection platform</span></li>
-            <li class="c-grc"><span class="ni"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M8.2 13.2 7 22l5-3 5 3-1.2-8.8"/></svg></span><span><b>Preparing</b> for CompTIA Security+ (expected Jan 2027)</span></li>
-            <li class="c-cloud"><span class="ni"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></span><span><b>Open to</b> opportunities in GRC, cloud security and security operations</span></li>
-          </ul>
+        <p class="lead-p">I'm a senior Computer Science student on the cybersecurity track at Effat University (GPA 3.86/4.00), with hands-on project experience in <b>threat detection</b>, <b>adversary emulation</b> and <b>compliance automation</b>.</p>
+        <p>Security works best when the controls on paper match what is actually happening on the network. So I build tools that <b>detect real attacks</b> and turn those detections into <b>compliance evidence</b>, mapped to frameworks like NIST CSF, ISO 27001 and NCA ECC.</p>
+        <p>I believe the strongest security professionals understand both <b>how an attacker operates</b> and <b>how an organization manages risk</b>. That's the skill set I'm building: offensive testing and detection on one side, governance and risk on the other.</p>
+        <p>Beyond my projects, I co-founded Effat University's <b>Cyber Security Club</b> and <b>SPE Chapter</b>, where I help run hands-on workshops, competitions and technical events.</p>
+        <div class="gcard cvcard reveal">
+          <a class="cv-thumb" href="assets/cv/Zainab_Taha_CV.pdf" target="_blank" rel="noopener" aria-label="View CV (PDF)">
+            <img src="assets/img/cv-thumb.webp" alt="Preview of Zainab Taha's CV" loading="lazy">
+          </a>
+          <div class="cv-info">
+            <div class="cv-kicker">// résumé</div>
+            <h4>Zainab Taha · CV</h4>
+            <p>PDF · Updated October 2026</p>
+            <div class="cv-actions">
+              <a class="btn primary" href="assets/cv/Zainab_Taha_CV.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>View</a>
+              <a class="btn" href="assets/cv/Zainab_Taha_CV.pdf" download="Zainab_Taha_CV.pdf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>Download</a>
+            </div>
+          </div>
         </div>
       </div>
       <div>
@@ -810,7 +830,7 @@ footer{padding:50px 0 40px;color:var(--subtle);font-size:13.5px;text-align:cente
           <div class="line"><i id="tlfill"></i></div>
           <div class="gcard tl-item c-grc reveal"><div class="d">Aug – Oct 2026</div><h4>Undergraduate Researcher</h4><div class="org">Department of Computer Science, Effat University</div><p>Co-authored a peer-reviewed journal paper (ICEE, 2026) presenting an open, Docker-based IT/OT testbed with rule-based and Random Forest intrusion detection for energy-sector networks.</p></div>
           <div class="gcard tl-item c-cloud reveal"><div class="d">2025 – 2026</div><h4>Vice President &amp; Co-founder, Cyber Security Club</h4><div class="org">Effat University</div><p>Co-led planning and delivery of hands-on labs, competitions and security workshops.</p></div>
-          <div class="gcard tl-item c-app reveal"><div class="d">2026 – present</div><h4>Vice President, Society of Petroleum Engineers</h4><div class="org">SPE Chapter, Effat University</div><p>Co-directing strategic planning and operations for technical workshops and community initiatives.</p></div>
+          <div class="gcard tl-item c-app reveal"><div class="d">2026 – present</div><h4>Co-founder &amp; Vice President, Society of Petroleum Engineers</h4><div class="org">SPE Chapter, Effat University</div><p>Co-directing strategic planning and operations for technical workshops and community initiatives.</p></div>
           <div class="gcard tl-item c-grc reveal"><div class="d">2025 – 2026</div><h4>Nominee, Student Shura Council President</h4><div class="org">Effat University</div><p>Nominated for the Queen Effat Citizenship Award to serve as student-body representative.</p></div>
         </div>
     </div>
