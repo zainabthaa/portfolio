@@ -8,5 +8,5 @@ Plain HTML/CSS/JS, no build step. Hosted on GitHub Pages from the `main` branch 
 
 ## Updating
 
-- Content lives in `index.html`; images in `assets/img/` (WebP, max 1600px wide).
+- Content lives in `index.html`; images in `assets/img/` (WebP, max 1600px wide). fixing
 - Capstone screenshots: add `assets/img/lml-soc.webp` and `assets/img/lml-grc.webp`, then uncomment the block marked `CAPSTONE SCREENSHOTS` in `index.html`.
