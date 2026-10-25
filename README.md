@@ -6,6 +6,8 @@
 
 Cybersecurity student at Effat University (GPA 3.86) building labs that attack systems, detect the attacks, and turn the detections into compliance evidence.
 
+🌐 **Live site:** https://zainabthaa.github.io/portfolio/
+
 [![Live site](https://img.shields.io/badge/Live_site-zainabthaa.github.io%2Fportfolio-22d3ee?style=for-the-badge)](https://zainabthaa.github.io/portfolio/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-zainab--taha--cs-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/zainab-taha-cs)
 [![CV](https://img.shields.io/badge/CV-PDF-a78bfa?style=for-the-badge)](assets/cv/Zainab_Taha_CV.pdf)
@@ -84,4 +86,4 @@ python3 -m http.server 8000   # then open http://localhost:8000
 
 ## Contact
 
-📧 [zaataha25@gmail.com](mailto:zaataha25@gmail.com) · 💼 [LinkedIn](https://www.linkedin.com/in/zainab-taha-cs) · 🐙 [GitHub](https://github.com/zainabthaa)
+🌐 [zainabthaa.github.io/portfolio](https://zainabthaa.github.io/portfolio/) · 📧 [zaataha25@gmail.com](mailto:zaataha25@gmail.com) · 💼 [LinkedIn](https://www.linkedin.com/in/zainab-taha-cs) · 🐙 [GitHub](https://github.com/zainabthaa)
