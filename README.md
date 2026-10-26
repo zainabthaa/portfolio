@@ -38,7 +38,7 @@ I'm a **published co-author** on AI-based intrusion detection for energy-sector 
 ## Research
 
 **AI-Powered Intrusion Detection for Programmable Logic Controllers in Smart Grid and Industrial Energy Networks: A Reproducible Docker-Based Simulation Platform**
-Natali Soukh, **Zainab Taha**, Passent Elkafrawy · *Intelligent Computing for Energy and Environment (ICEE)*, Vol. 1, No. 1, 2026 · [PDF](assets/docs/ICEE_PLC_IDS_Paper.pdf)
+Zainab Taha et al. · *Intelligent Computing for Energy and Environment (ICEE)*, Vol. 1, No. 1, 2026 · [PDF](assets/docs/ICEE_PLC_IDS_Paper.pdf)
 
 An open, containerised IT/OT testbed that generates its own labelled traffic and detects a two-stage attack live, using rule-based detection and a Random Forest model.
 
